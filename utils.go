@@ -24,3 +24,10 @@ func quarterRound(internalState *[16]uint32, a, b, c, d uint32) {
 func bitwiseLeftShift(val uint32, shiftby uint) uint32 {
 	return val<<shiftby | val>>(32-shiftby)
 }
+
+func addStates(old, new [16]uint32) (result [16]uint32) {
+	for i := range old {
+		result[i] = old[i] + new[i]
+	}
+	return
+}
